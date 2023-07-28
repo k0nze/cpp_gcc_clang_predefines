@@ -21,11 +21,16 @@ jobs:
         sudo apt -y install ninja-build clang
     - name: build_gcc
       run: |
-        which g++
-        cd build
+        export CC=/usr/bin/gcc
+        export CXX=/usr/bin/g++
+        cd build_gcc
         cmake -GNinja ..
         ninja
-    - name: test
+    - name: test_gcc
       run: |
-        cd build
+        cd build_gcc
         ./main
+    - name: build_clang
+      run: |
+        which clang
+        which clang++
