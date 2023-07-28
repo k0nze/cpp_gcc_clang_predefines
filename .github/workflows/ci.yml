@@ -19,8 +19,9 @@ jobs:
       run: |
         sudo apt -y update
         sudo apt -y install ninja-build clang
-    - name: build
+    - name: build_gcc
       run: |
+        which g++
         cd build
         cmake -GNinja ..
         ninja
