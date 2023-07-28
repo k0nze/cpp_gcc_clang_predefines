@@ -23,6 +23,7 @@ jobs:
       run: |
         export CC=/usr/bin/gcc
         export CXX=/usr/bin/g++
+        mkdir build_gcc
         cd build_gcc
         cmake -GNinja ..
         ninja
